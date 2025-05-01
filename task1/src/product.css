@@ -1,0 +1,111 @@
+:root {
+    --color-bg: #ffffff;
+    --color-text-primary: #2c3e50;
+    --color-text-secondary: #666666;
+    --color-text-tertiary: #7f8c8d;
+    --color-accent: #27ae60;
+    --color-shadow: rgba(0, 0, 0, 0.1);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 10px;
+    --transition-speed: 0.3s;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--color-bg);
+    font-family: var(--font-family);
+  }
+  
+  .product-card {
+    background: var(--color-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 12px var(--color-shadow);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .product-card:hover, .product-card:focus {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px var(--color-shadow);
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .product-card:hover .product-image, .product-card:focus .product-image {
+    transform: scale(1.05);
+  }
+  
+  .product-info {
+    padding: 1.5rem;
+    color: var(--color-text-primary);
+  }
+  
+  .product-title {
+    font-size: 1.3rem;
+    margin: 0 0 0.75rem;
+    color: var(--color-text-primary);
+    font-weight: 600;
+  }
+  
+  .product-description {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .price {
+    font-size: 1.3rem;
+    color: var(--color-text-primary);
+  }
+  
+  .discount {
+    color: var(--color-accent);
+    font-size: 1rem;
+  }
+  
+  .stock-status {
+    font-size: 0.9rem;
+    color: var(--color-text-tertiary);
+  }
+  
+  .loading, .error {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.3rem;
+    color: var(--color-text-primary);
+  }
+  
+  @media (max-width: 1024px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+    }
+  }
+  
